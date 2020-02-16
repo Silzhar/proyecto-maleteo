@@ -1,0 +1,77 @@
+[
+  {
+    "id" : "5dd90ff922e4cbd47edd1522",
+    "user": {
+      "name": "Sergio",
+      "surname": "Garnacho"
+    },
+    "name": "El hall de Sergio",
+    "rating": 3.4,
+    "size": 7,
+    "location": {
+      "latitude": 40.44897932,
+      "longitude": -3.65318272
+    },
+    "distance": 3.8
+  },
+  {
+    "id" : "5dd920bb99d8a9e1210615d4",
+    "user": {
+      "name": "Afonso",
+      "surname": "Cortés"
+    },
+    "name": "Trastero",
+    "rating": 4.1,
+    "size": 5,
+    "location": {
+      "latitude": 40.46244854,
+      "longitude": -3.73603243
+    },
+    "distance": 3.3
+  },
+  {
+    "id" : "5dd9221a2f51dd8cca93f8a8",
+    "user": {
+      "name": "Carlota",
+      "surname": "Tribiño"
+    },
+    "name": "Salón amplio",
+    "rating": 4.6,
+    "size": 10,
+    "location": {
+      "latitude": 40.42847961,
+      "longitude": -3.63071723
+    },
+    "distance": 6.5328
+  },
+  {
+    "id" : "5dd9212c37eae2490bafac75",
+    "user": {
+      "name": "Vanessa",
+      "surname": "Domínguez"
+    },
+    "name": "El guardamaletas",
+    "rating": 4.33333333333333,
+    "size": 2,
+    "location": {
+      "latitude": 40.46943586,
+      "longitude": -3.73705556
+    },
+    "distance": 3.6026
+  },
+  {
+    "id" : "5dd92215be9a0d321d1a16e8",
+    "user": {
+      "name": "Fran",
+      "surname": "Linde"
+    },
+    "name": "Mi salón",
+    "rating": 3.2678,
+    "size": 3,
+    "location": {
+      "latitude": 40.45638975,
+      "longitude": -3.73457809
+    },
+    "distance": 3.2005
+  }
+]

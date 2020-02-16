@@ -1,0 +1,62 @@
+[
+  {
+    "id" : "5dd90ff922e4cbd47edd1522",
+    "text": "Casi siempre encuentro lo que busco, aunque a veces es un poco laborioso y además por dar cada miembro su opinión sobre distintos aspectos de sus vivencias, se obtiene puntos y/o acreditaciones.",
+    "author": {
+      "name": "Sergio",
+      "surname": "Garnacho",
+      "addressinfo": {
+        "address": "C/ Orense, 69",
+        "address2": "",
+        "city": "Madrid",
+        "province": "Madrid",
+        "postalcode": "28020",
+        "country": "Spain"
+      },
+      "pic": {
+        "thumbnail": "http://lorempixel.com/640/640/people/9/",
+        "full": "http://lorempixel.com/1920/1080/people/9/"
+      }
+    }
+  },
+  {
+    "id" : "5dd915259d0748436bd57624",
+    "text": "Viaje a Sevilla, una maravilla. Con free tour whiteumbrellasevilla, muy bien con nuestra guía Sofía, nos hizo la visita mucho más productiva, con sus explicaciones de una manera muy amena. Merece la pena. Encantados de haberte conocido",
+    "author": {
+      "name": "Carmen",
+      "surname": "Sánchez",
+      "addressinfo": {
+        "address": "Estrela 18",
+        "address2": "Puerta 3",
+        "city": "Santa Cruz de Bezana",
+        "province": "Cantabria",
+        "postalcode": "39100",
+        "country": "Spain"
+      },
+      "pic": {
+        "thumbnail": "http://lorempixel.com/640/640/people/9/",
+        "full": "http://lorempixel.com/1920/1080/people/9/"
+      }
+    }
+  },
+  {
+    "id" : "5dd91586431dcd1f0d2824dc",
+    "text": "Excelente aplicación tanto para compartir y puntuar tus experiencias como para consultar opiniones e información.",
+    "author": {
+      "name": "Natalia",
+      "surname": "Fajardo",
+      "addressinfo": {
+        "address": "Carretera Cádiz-Málaga 10",
+        "address2": "",
+        "city": "Errezil",
+        "province": "Guipúzcoa",
+        "postalcode": "20737",
+        "country": "Spain"
+      },
+      "pic": {
+        "thumbnail": "http://lorempixel.com/640/640/people/9/",
+        "full": "http://lorempixel.com/1920/1080/people/9/"
+      }
+    }
+  }
+]

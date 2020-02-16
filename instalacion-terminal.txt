@@ -1,0 +1,24 @@
+Paso 1 :
+
+git clone https://gitlab.com/upgrade-hub/upgrade-hub-students-bootcamp-pt-noviembre/symfony-skeleton.git
+
+Paso 2 :
+
+docker-compose up -d
+
+Paso 3 :
+
+docker-compose exec php bash
+
+Paso 4 :
+
+composer create-project symfony/skeleton
+
+Paso 5 :
+
+ composer require debug
+
+Paso 6 :
+
+composer require annotations
+
