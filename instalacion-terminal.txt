@@ -22,3 +22,182 @@ Paso 6 :
 
 composer require annotations
 
+Paso 7 :
+
+composer require doctrine
+
+
+Paso 8 :
+
+composer require maker
+
+             bin/console make:entity
+
+              Class name of the entity to create or update (e.g. BraveElephant):
+            > Formulario
+
+            created: src/Entity/Formulario.php
+            created: src/Repository/FormularioRepository.php
+
+            Entity generated! Now let's add some fields!
+            You can always add more fields later manually or by re-running this command.
+
+            New property name (press <return> to stop adding fields):
+            > usuario
+
+            Field type (enter ? to see all types) [string]:
+            > 
+
+            Field length [255]:
+            > 100
+
+            Can this field be null in the database (nullable) (yes/no) [no]:
+            > 
+
+            updated: src/Entity/Formulario.php
+
+            Add another property? Enter the property name (or press <return> to stop adding fields):
+            > password
+            Field type (enter ? to see all types) [string]:
+            > 
+
+            Field length [255]:
+            > 10
+
+            Can this field be null in the database (nullable) (yes/no) [no]:
+            > no
+
+            updated: src/Entity/Formulario.php
+
+            Add another property? Enter the property name (or press <return> to stop adding fields):
+            > localidad
+
+            Field type (enter ? to see all types) [string]:
+            > 
+
+            Field length [255]:
+            > 50
+
+            Can this field be null in the database (nullable) (yes/no) [no]:
+            > no
+
+            updated: src/Entity/Formulario.php
+
+            Add another property? Enter the property name (or press <return> to stop adding fields):
+            > opinion
+
+            Field type (enter ? to see all types) [string]:
+            > text
+
+            Can this field be null in the database (nullable) (yes/no) [no]:
+            > yes
+
+            updated: src/Entity/Formulario.php
+
+            Add another property? Enter the property name (or press <return> to stop adding fields):
+            > 
+
+
+                    
+            Success! 
+
+            bin/console make:migration
+
+            <!-- 
+            /**
+            * @Route("/", name="homepage")
+            */
+            return new Response("Primera ruta"); -->
+                    
+            Success! 
+                    
+
+            Next: Review the new migration "src/Migrations/Version20200217161354.php"
+            Then: Run the migration with php bin/console doctrine:migrations:migrate
+            See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+
+             bin/console doctrine:migrations:migrate
+
+             WARNING! You are about to execute a database migration that could result in schema changes and data loss. Are you sure you wish to continue? (y/n)y
+            Migrating up to 20200217161354 from 0
+
+            ++ migrating 20200217161354
+
+                -> CREATE TABLE formulario (id INT AUTO_INCREMENT NOT NULL, usuario VARCHAR(100) NOT NULL, password VARCHAR(10) NOT NULL, localidad VARCHAR(50) NOT NULL, opinion LONGTEXT DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB
+
+            ++ migrated (took 96.9ms, used 14M memory)
+
+            ------------------------
+
+            ++ finished in 104.6ms
+            ++ used 14M memory
+            ++ 1 migrations executed
+            ++ 1 sql queries
+
+acceder a la base de datos 
+
+silzhar@picuet:~/Documentos/upgrade_hub/proyecto-maleteo$ docker-compose exec mysql bash
+root@e01b3539f166:/# mysql -u root -prootpass
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.19 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| demo               |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.01 sec)
+
+mysql> use demo;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++--------------------+
+| Tables_in_demo     |
++--------------------+
+| formulario         |
+| migration_versions |
++--------------------+
+2 rows in set (0.01 sec)
+
+mysql> select * from formulario;
++----+---------+-----------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| id | usuario | password  | localidad       | opinion                                                                                                                                             |
++----+---------+-----------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+|  1 | Isolda  | 1coslada1 | Coslada, madrid | Amables en el trato y solucionaron 
+        mi problema de qu� hacer con la maleta. Puede visitar el museo sin la carga.
+         Muy recomendable. |
+|  2 | Isolda  | 1coslada1 | Coslada, madrid | Amables en el trato y solucionaron 
+        mi problema de qu� hacer con la maleta. Puede visitar el museo sin la carga.
+         Muy recomendable. |
++----+---------+-----------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+2 rows in set (0.00 sec)
+
+
+ docker-compose exec php bash
+root@aab13c3ab91d:/application# bin/console make:entity
+
+ Class name of the entity to create or update (e.g. BraveJellybean):
+ > Usuario
+
+
+
+
+           
