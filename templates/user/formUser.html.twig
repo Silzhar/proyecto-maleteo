@@ -3,26 +3,26 @@
 {% block cuerpo %}
     <form action="{{ path("post_user") }}" method="post">
         <input type="text" name="nombre">
-        <input type="text" name="apellido">
-        <input type="text" name="edad">
+        <input type="text" name="email">
+        <input type="text" name="city">
         <input type="submit" value="Enviar">
     </form>
 
-    {% if nombre|default(false) and edad|default(false) and apellido|default(false) %}
+    {% if nombre|default(false) and email|default(false) and city|default(false) %}
         <p>El nombre es: {{ nombre }}</p>
-        <p>La edad es: {{ edad }}</p>
+        <p>La email es: {{ email }}</p>
         <p>Enlace a usuario : 
             <a href="{{ path("rutaUsuario", 
-            {nombre: nombre, apellido:apellido, edad: 0}) }}">
+            {nombre: nombre, email:email, city: city}) }}">
             {{ nombre }}</a></p>
     {% endif %}
-    <h2>El apellido es: {{ apellido|default("No existe el apellido") }}</h2>
-    <h2>La edad es: {{ edad|default(0) }}</h2>
+    <h2>El email es: {{ email|default("No existe el email") }}</h2>
+    <h2>La ciudad  es: {{ city|default(Madrid) }}</h2>
 
     {% if usuarios|default(false) %}
     <ul>
         {% for usuario in usuarios %}
-            <li>Nombre : {{ usuario.nombre }} {{ usuario.apellido }} </li>
+            <li>Nombre : {{ usuario.nombre }} {{ usuario.email }} </li>
     </ul>
         {% endfor %}
     {% endif %}
