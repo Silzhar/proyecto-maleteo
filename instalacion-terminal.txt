@@ -199,5 +199,8 @@ root@aab13c3ab91d:/application# bin/console make:entity
 
 
 
+composer require asset 
+
+
 
            

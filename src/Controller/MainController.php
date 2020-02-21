@@ -29,20 +29,21 @@ class MainController extends AbstractController{
         $usuarios = $repo->findAll();
         $this->addFlash('Éxito!','Demo solicitada');
 
-        return $this->render("user/formUser.html.twig", 
+        return $this->render("user/registro.html.twig", 
             ["usuarios"=> $usuarios]);
 
        // return $this->render("user/formUser.html.twig");
     }
 
     /**
-     * @Route("/user", methods={"POST"}, name="post_user")
+     * @Route("/", methods={"GET","POST"}, name="post_user")
      */
     public function postUser(Request $request, EntityManagerInterface $em){
         $nombre = $request->get('nombre');
         $email = $request->get('email');
         $city = $request->get('city'); 
 
+        if($nombre && $email && $city != false) {
         $usuario = new Usuario();
         $usuario->setNombre($nombre);
         $usuario->setEmail($email);
@@ -51,17 +52,28 @@ class MainController extends AbstractController{
         $em->persist($usuario);
         $em->flush();
 
+
         $repo = $em->getRepository(Usuario::class);
         $usuarios = $repo->findAll();
-
-
+        
         return $this->render("user/formUser.html.twig",
-        [
-            "nombre"=>$nombre,
-            "email"=>$email,
-            "city"=>$city,
-            "usuarios"=>$usuarios
+            [
+             "nombre"=>$nombre,
+             "email"=>$email,
+             "city"=>$city,
+             "usuarios"=>$usuarios
         ]);
+        } else{
+            return $this->render("user/maleteo.html.twig");
+        }
+
+        // return $this->render("user/formUser.html.twig",
+        // [
+        //     "nombre"=>$nombre,
+        //     "email"=>$email,
+        //     "city"=>$city,
+        //     "usuarios"=>$usuarios
+        // ]);
     }
 
     /**
