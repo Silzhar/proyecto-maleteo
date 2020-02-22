@@ -14,7 +14,7 @@ class MainController extends AbstractController{
 
 // AbstractController extiende de twig para pintar el index.
     /**
-     * @Route("/", name="maleteo")
+     * @Route("/", methods={"GET"}, name="maleteo")
      */
     public function index () {
         return $this->render("user/maleteo.html.twig");
@@ -41,9 +41,9 @@ class MainController extends AbstractController{
     public function postUser(Request $request, EntityManagerInterface $em){
         $nombre = $request->get('nombre');
         $email = $request->get('email');
-        $city = $request->get('city'); 
+        $city = $request->get('ciudad'); 
 
-        if($nombre && $email && $city != false) {
+        // if($nombre && $email && $city != false) {
         $usuario = new Usuario();
         $usuario->setNombre($nombre);
         $usuario->setEmail($email);
@@ -63,9 +63,9 @@ class MainController extends AbstractController{
              "city"=>$city,
              "usuarios"=>$usuarios
         ]);
-        } else{
-            return $this->render("user/maleteo.html.twig");
-        }
+        // } else{
+        //     return $this->render("user/maleteo.html.twig");
+        // }
 
         // return $this->render("user/formUser.html.twig",
         // [
