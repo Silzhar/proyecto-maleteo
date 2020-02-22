@@ -22,21 +22,21 @@ class MainController extends AbstractController{
     }
 
     /**
-     * @Route("/user", methods={"GET"}, name="get_user")
+     * @Route("/user/maleteo", methods={"GET"}, name="get_user")
      */
     public function getUsers(EntityManagerInterface $em){
         $repo = $em->getRepository(Usuario::class);
         $usuarios = $repo->findAll();
         $this->addFlash('Éxito!','Demo solicitada');
 
-        return $this->render("user/registro.html.twig", 
+        return $this->render("user/maleteo.html.twig", 
             ["usuarios"=> $usuarios]);
 
        // return $this->render("user/formUser.html.twig");
     }
 
     /**
-     * @Route("/", methods={"GET","POST"}, name="post_user")
+     * @Route("/", methods={"POST"}, name="post_user")
      */
     public function postUser(Request $request, EntityManagerInterface $em){
         $nombre = $request->get('nombre');
