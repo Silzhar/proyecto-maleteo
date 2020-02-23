@@ -43,7 +43,7 @@ class MainController extends AbstractController{
         $email = $request->get('email');
         $city = $request->get('ciudad'); 
 
-        // if($nombre && $email && $city != false) {
+        if($nombre && $email && $city != false) {
         $usuario = new Usuario();
         $usuario->setNombre($nombre);
         $usuario->setEmail($email);
@@ -63,17 +63,17 @@ class MainController extends AbstractController{
              "city"=>$city,
              "usuarios"=>$usuarios
         ]);
-        // } else{
-        //     return $this->render("user/maleteo.html.twig");
-        // }
+        } else{
+            return $this->render("user/maleteo.html.twig");
+        }
 
-        // return $this->render("user/formUser.html.twig",
-        // [
-        //     "nombre"=>$nombre,
-        //     "email"=>$email,
-        //     "city"=>$city,
-        //     "usuarios"=>$usuarios
-        // ]);
+        return $this->render("user/formUser.html.twig",
+        [
+            "nombre"=>$nombre,
+            "email"=>$email,
+            "city"=>$city,
+            "usuarios"=>$usuarios
+        ]);
     }
 
     /**
