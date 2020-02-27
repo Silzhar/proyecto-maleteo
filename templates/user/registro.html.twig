@@ -1,8 +1,11 @@
 {% extends 'user/maleteo.html.twig' %}
 
 {% block formulario %}
-    
         <p class="howworks__step-title heading3">Registro con éxito !</p>
-
+        {% if nombre|default(false) and email|default(false) and city|default(false) %}
+            <p>Nombre registrado: {{ nombre }}</p>
+            <p>Email: {{ email }}</p>
+            <h2>La ciudad  es: {{ city }}</h2>
+        {% endif %}
 
 {% endblock %}

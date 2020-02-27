@@ -29,8 +29,8 @@ class MainController extends AbstractController{
         $usuarios = $repo->findAll();
         // $this->addFlash('Éxito!','Demo solicitada');
 
-        return $this->render("user/registro.html.twig" 
-            ); // ["usuarios"=> $usuarios]
+        return $this->render("user/registro.html.twig", 
+        ["usuarios"=> $usuarios] ); // 
 
        // return $this->render("user/formUser.html.twig");
     }
