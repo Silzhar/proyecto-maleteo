@@ -125,75 +125,77 @@
               </div>
             </div>
             <div class="col-md-5 col-md-offset-1">
-              <div class="the-form">
-                <form action="{{ path("post_user") }}" method="post">
-                  <p class="the-form__title heading3">
-                    Solicita una demo
-                  </p>
-                  
-                  <div class="the-form__group">
-                    <label for="name">
-                      Nombre
-                    </label>
-                    <input type="text"
-                          id="name"
-                          name="nombre"
-                          class="the-form__input"
-                          placeholder="Vincent Chase">
-                  </div>
+            {% block formulario %}
+                <div class="the-form">
+                  <form action="{{ path("post_user") }}" method="post">
+                    <p class="the-form__title heading3">
+                      Solicita una demo
+                    </p>
+                    
+                    <div class="the-form__group">
+                      <label for="name">
+                        Nombre
+                      </label>
+                      <input type="text"
+                            id="name"
+                            name="nombre"
+                            class="the-form__input"
+                            placeholder="Vincent Chase">
+                    </div>
 
-                  <div class="the-form__group">
-                    <label for="name">
-                      Email
-                    </label>
-                    <input type="email"
-                          id="name"
-                          name="email"
-                          class="the-form__input"
-                          placeholder="vincent@mga.com">
-                  </div>
+                    <div class="the-form__group">
+                      <label for="name">
+                        Email
+                      </label>
+                      <input type="email"
+                            id="name"
+                            name="email"
+                            class="the-form__input"
+                            placeholder="vincent@mga.com">
+                    </div>
 
-                  <div class="the-form__group">
-                    <label for="city">
-                      Ciudad
-                    </label>
-                    <select name="ciudad"
-                            id="city"
-                            class="the-form__input the-form__select">
-                      <option value="Madrid">Madrid</option>
-                      <option value="Alcala">Alcalá de Henares</option>
-                      <option value="Alcobendas">Alcobendas</option>
-                      <option value="Alcorcon">Alcorcón</option>
-                      <option value="Ajalvir">Ajalvir</option>
-                      <option value="Arganda">Arganda del Rey</option>
-                      <option value="Fuenlabrada">Fuenlabrada</option>
-                      <option value="Coslada">Coslada</option>
-                      <option value="Las-Rozas">Las Rozas de Madrid</option>
-                      <option value="Leganes">Leganés</option>
-                      <option value="Majadahonda">Majadahonda</option>
-                      <option value="Mostoles">Móstoles</option>
-                      <option value="Parla">Parla</option>
-                      <option value="Pinto">Pinto</option>
-                      <option value="Rivas">Rivas-Vaciamadrid</option>
-                      <option value="San-Fernando">San Fernando de Henares</option>
-                      <option value="San-Sebastian">San Sebastián de los Reyes</option>
-                      <option value="Torrejon">Torrejón de Ardoz</option>
-                      <option value="Vicalvaro">Vicálvaro</option>
-                    </select>
-                  </div>
+                    <div class="the-form__group">
+                      <label for="city">
+                        Ciudad
+                      </label>
+                      <select name="ciudad"
+                              id="city"
+                              class="the-form__input the-form__select">
+                        <option value="Madrid">Madrid</option>
+                        <option value="Alcala">Alcalá de Henares</option>
+                        <option value="Alcobendas">Alcobendas</option>
+                        <option value="Alcorcon">Alcorcón</option>
+                        <option value="Ajalvir">Ajalvir</option>
+                        <option value="Arganda">Arganda del Rey</option>
+                        <option value="Fuenlabrada">Fuenlabrada</option>
+                        <option value="Coslada">Coslada</option>
+                        <option value="Las-Rozas">Las Rozas de Madrid</option>
+                        <option value="Leganes">Leganés</option>
+                        <option value="Majadahonda">Majadahonda</option>
+                        <option value="Mostoles">Móstoles</option>
+                        <option value="Parla">Parla</option>
+                        <option value="Pinto">Pinto</option>
+                        <option value="Rivas">Rivas-Vaciamadrid</option>
+                        <option value="San-Fernando">San Fernando de Henares</option>
+                        <option value="San-Sebastian">San Sebastián de los Reyes</option>
+                        <option value="Torrejon">Torrejón de Ardoz</option>
+                        <option value="Vicalvaro">Vicálvaro</option>
+                      </select>
+                    </div>
 
-                  <div class="the-form__group the-form__group_checkbox">
-                    <input type="checkbox"
-                          id="privacity">
-                    <label for="privacity">
-                      Aceptas la <a href="#">política de privacidad</a>
-                    </label>
-                  </div>
+                    <div class="the-form__group the-form__group_checkbox">
+                      <input type="checkbox"
+                            id="privacity">
+                      <label for="privacity">
+                        Aceptas la <a href="#">política de privacidad</a>
+                      </label>
+                    </div>
 
-                  <input type="submit"
-                        class="the-form__btn btn btn-lg btn-primary"
-                        value="Enviar">
-                </form>
+                    <input type="submit"
+                          class="the-form__btn btn btn-lg btn-primary"
+                          value="Enviar">
+                  </form>
+                {% endblock %}
               </div>
             </div>
           </div>
