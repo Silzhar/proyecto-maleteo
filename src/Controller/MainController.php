@@ -8,6 +8,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Util\FormUtil;
 use Symfony\Component\HttpFoundation\Request;
 
 class MainController extends AbstractController{
@@ -27,16 +28,15 @@ class MainController extends AbstractController{
     public function getUsers(EntityManagerInterface $em){
         $repo = $em->getRepository(Usuario::class);
         $usuarios = $repo->findAll();
-        // $this->addFlash('Éxito!','Demo solicitada');
 
-        return $this->render("user/registro.html.twig", 
+        return $this->render("user/demo.html.twig", 
         ["usuarios"=> $usuarios] ); // 
 
        // return $this->render("user/formUser.html.twig");
     }
 
     /**
-     * @Route("/registro", methods={"POST"}, name="post_user")
+     * @Route("/demo", methods={"POST"}, name="post_user")
      */
     public function postUser(Request $request, EntityManagerInterface $em){
         $nombre = $request->get('nombre');
@@ -54,7 +54,7 @@ class MainController extends AbstractController{
         $repo = $em->getRepository(Usuario::class);
         $usuarios = $repo->findAll();
         
-        return $this->render("user/registro.html.twig",
+        return $this->render("user/demo.html.twig",
             [
              "nombre"=>$nombre,
              "email"=>$email,
@@ -62,13 +62,39 @@ class MainController extends AbstractController{
              "usuarios"=>$usuarios
         ]);
 
-        // return $this->render("/user/registro.html.twig",
-        // [
-        //     "nombre"=>$nombre,
-        //     "email"=>$email,
-        //     "city"=>$city,
-        //     "usuarios"=>$usuarios
-        // ]);
+    }
+
+    /**
+     * @Route("/login", methods={"GET"}, name="get_registro")
+     */
+    public function getRegistro(EntityManagerInterface $em){
+        $repo = $em->getRepository(Formulario::class);
+        $registro = $repo->findAll();
+
+        return $this->render("user/login.html.twig",
+        ["registro"=>$registro] );
+    }
+
+    /**
+     * @Route("/login", methods={"POST"}, name="post_registro")
+     */ 
+    public function postRegistro(Request $request, EntityManagerInterface $em){
+        $usuarioRegistro = $request->get('usuario');
+        $pass = $request->get('password');
+        $localidad = $request->get('localidad');
+
+        $registro = new Formulario();
+        $registro->setUsuario($usuarioRegistro);
+        $registro->setPassword($pass);
+        $registro->setLocalidad($localidad);
+
+        $em->persist($registro);
+        $em->flush();
+
+        $repo = $em->getRepository(Formulario::class);
+        $registros = $repo->findAll();
+
+        return $this->render("user/login.html.twig");
     }
 
 
@@ -91,9 +117,3 @@ class MainController extends AbstractController{
 }
 
 ?>
-
-<!-- 
-/**
-* @Route("/", name="homepage")
-*/
-return new Response("Primera ruta"); -->

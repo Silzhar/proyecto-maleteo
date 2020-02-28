@@ -53,6 +53,7 @@
         </div>
       </div>
     </div>
+{% block usuarios %}
     <div class="wrapper">
       <div class="container-fluid">
         <section class="howworks">
@@ -72,8 +73,31 @@
                     Date de alta
                   </p>
                   <p class="howworks__step-txt">
-                    Una olla de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados.
+                    {# <a href="templates/user/login.html.twig"> #}
+                    <input type="submit" 
+                      class="registro"
+                      value="REGISTRO">
+                    {# </a>   #}
                   </p>
+                </div>
+              </div>
+            </li>
+            <li class="col-md-4">
+              <div class="howworks__step">
+                <div class="howworks__step-w-bola">
+                  <div class="howworks__step-bola">     
+                      <span class="heading3">1</span>
+                  </div>
+                </div>
+                <div class="howworks__step-w-txt">
+                  <p class="howworks__step-title heading3">
+                    Identifícate
+                  </p>
+                  <p class="howworks__step-txt">
+                    
+                      <input type="submit" class="identificador" value="LOGIN">
+                    
+                 </p>
                 </div>
               </div>
             </li>
@@ -89,24 +113,7 @@
                     Date de alta
                   </p>
                   <p class="howworks__step-txt">
-                    Una olla de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados.
-                  </p>
-                </div>
-              </div>
-            </li>
-            <li class="col-md-4">
-              <div class="howworks__step">
-                <div class="howworks__step-w-bola">
-                  <div class="howworks__step-bola">
-                    <span class="heading3">1</span>
-                  </div>
-                </div>
-                <div class="howworks__step-w-txt">
-                  <p class="howworks__step-title heading3">
-                    Date de alta
-                  </p>
-                  <p class="howworks__step-txt">
-                    Una olla de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados.
+                    another the button !!
                   </p>
                 </div>
               </div>
@@ -200,7 +207,7 @@
             </div>
           </div>
         </section>
-
+{% endblock %}    
         <section class="opinions">
           <h2 class="opinions__title heading2">
             Opiniones de otros guardianes
