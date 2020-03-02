@@ -73,11 +73,12 @@
                     Date de alta
                   </p>
                   <p class="howworks__step-txt">
-                    {# <a href="templates/user/login.html.twig"> #}
-                    <input type="submit" 
+                    <a href="{{ 'http://localhost:8000/login' }}">  
+                    <input type="button"
+                      {# href="{{ path('login') }}"  #}
                       class="registro"
                       value="REGISTRO">
-                    {# </a>   #}
+                    </a>  
                   </p>
                 </div>
               </div>
