@@ -79,12 +79,12 @@ class MainController extends AbstractController{
      * @Route("/login", methods={"POST"}, name="post_registro")
      */ 
     public function postRegistro(Request $request, EntityManagerInterface $em){
-        $usuarioRegistro = $request->get('usuario');
+        $usuario = $request->get('usuario');
         $pass = $request->get('password');
         $localidad = $request->get('localidad');
 
         $registro = new Formulario();
-        $registro->setUsuario($usuarioRegistro);
+        $registro->setUsuario($usuario);
         $registro->setPassword($pass);
         $registro->setLocalidad($localidad);
 
@@ -94,7 +94,13 @@ class MainController extends AbstractController{
         $repo = $em->getRepository(Formulario::class);
         $registros = $repo->findAll();
 
-        return $this->render("user/login.html.twig");
+        return $this->render("user/login.html.twig",
+        [
+            "usuario"=>$usuario,
+            "password"=>$pass,
+            "localidad"=>$localidad,
+            "registros"=>$registros
+        ] );
     }
 
 
