@@ -83,9 +83,11 @@ class MainController extends AbstractController{
         $pass = $request->get('password');
         $localidad = $request->get('localidad');
 
+        $encriptPass = password_hash($pass, PASSWORD_DEFAULT ); // para codificar la contraseña
+
         $registro = new Formulario();
         $registro->setUsuario($usuario);
-        $registro->setPassword($pass);
+        $registro->setPassword($encriptPass);
         $registro->setLocalidad($localidad);
 
         $em->persist($registro);
