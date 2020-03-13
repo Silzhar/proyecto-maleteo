@@ -1,11 +1,29 @@
 {% extends 'user/maleteo.html.twig' %}
 
 {% block usuarios %}
-    <form action="{{ path("post_registro") }}" method="post">
-        <input type="text" name="usuario" placeholder="nombre">
-        <input type="password" name="password" placeholder="contraseña">
-        <input type="text" name="localidad" placeholder="localidad">
-        <input type="submit" value="Enviar">
-    </form>
+    <div class="the-form">
+        <form action="{{ path("post_registro") }}" method="post">
+
+            <p class="the-form__title heading3">Date de alta</p>
+
+            <div class="the-form__group">
+                <label for="name">Nombre</label>
+                    <input type="text" name="usuario" placeholder="Vincent"><br />
+            </div>
+
+            <div class="the-form__group">
+                <label for="name">Contraseña</label>
+                <input type="password" name="password" placeholder="******"><br />
+            </div>
+
+            <div class="the-form__group">
+                <label for="name">Localidad</label>
+                <input type="text" name="localidad" placeholder="Madrid"><br />
+                
+            </div>
+
+            <input type="submit" class="the-form__btn btn btn-lg btn-primary" value="Enviar">
+        </form>
+    </div>
 
 {%  endblock %}
