@@ -122,6 +122,22 @@ class MainController extends AbstractController{
             ]
             );
     }
+
+    /**
+     *@Route("/admin" ,methods={"GET"}, name="admin_control")
+     */
+    public function adminControl(EntityManagerInterface $em){
+
+        // Recoger usuarios registrados en la pagina.
+        $bbddUsuarios = $em->getRepository(Formulario::class);
+        $control = $bbddUsuarios->findAll();
+
+        return $this->render(
+            'user/admin.html.twig',
+            ['control' => $control]
+        );
+    }
+
 }
 
 ?>
