@@ -80,6 +80,7 @@ class MainController extends AbstractController{
      */ 
     public function postRegistro(Request $request, EntityManagerInterface $em){
         $usuario = $request->get('usuario');
+        $mail = $request->get('email');
         $pass = $request->get('password');
         $localidad = $request->get('localidad');
 
@@ -87,6 +88,7 @@ class MainController extends AbstractController{
 
         $registro = new Formulario();
         $registro->setUsuario($usuario);
+        // Añadir email .
         $registro->setPassword($encriptPass);
         $registro->setLocalidad($localidad);
 
