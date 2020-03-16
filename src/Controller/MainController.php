@@ -88,7 +88,7 @@ class MainController extends AbstractController{
 
         $registro = new Formulario();
         $registro->setUsuario($usuario);
-        // Añadir email .
+        $registro->setEmail($mail);
         $registro->setPassword($encriptPass);
         $registro->setLocalidad($localidad);
 
@@ -101,6 +101,7 @@ class MainController extends AbstractController{
         return $this->render("user/login.html.twig",
         [
             "usuario"=>$usuario,
+            "email"=>$mail,
             "password"=>$pass,
             "localidad"=>$localidad,
             "registros"=>$registros
