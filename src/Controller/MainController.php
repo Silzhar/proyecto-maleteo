@@ -8,7 +8,8 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Util\FormUtil;
+//Devuelve los errores si hay un campo valido o vacio .
+use Symfony\Component\Validator\Constraint as Assert; 
 use Symfony\Component\HttpFoundation\Request;
 
 class MainController extends AbstractController{
@@ -67,6 +68,7 @@ class MainController extends AbstractController{
     /**
      * @Route("/login", methods={"GET"}, name="get_registro")
      */
+
     public function getRegistro(EntityManagerInterface $em){
         $repo = $em->getRepository(Formulario::class);
         $registro = $repo->findAll();
@@ -78,6 +80,7 @@ class MainController extends AbstractController{
     /**
      * @Route("/login", methods={"POST"}, name="post_registro")
      */ 
+
     public function postRegistro(Request $request, EntityManagerInterface $em){
         $usuario = $request->get('usuario');
         $mail = $request->get('email');
@@ -106,6 +109,23 @@ class MainController extends AbstractController{
             "localidad"=>$localidad,
             "registros"=>$registros
         ] );
+    }
+
+
+    public function validacionRegistro(){
+
+        $validacion = new MainController();
+
+        $validator = $this->get('validator');
+        $errors = $validator->validate($validacion);
+
+        if (count($errors) > 0) {
+            return $this->render('user/login.html.twig', array(
+                'errors' => $errors,
+            ));
+        }
+        return new Response('Fallo en los datos de entrada');
+
     }
 
 
